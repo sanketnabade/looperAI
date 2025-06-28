@@ -46,3 +46,4 @@ temp/
 
 MIGRATION_SUMMARY.md
 transactions.json
+/api-docs

@@ -18,7 +18,7 @@ export const MessagePage: React.FC = () => {
                         Message Center
                     </Typography>
                     <Typography variant="body1" sx={{ color: '#CBD5E1' }}>
-                        This page is coming soon. Here you'll be able to view notifications, 
+                        This page is coming soon. Here you'll be able to view notifications,
                         system messages, and communicate with support.
                     </Typography>
                 </CardContent>

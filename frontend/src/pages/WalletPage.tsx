@@ -282,11 +282,11 @@ export const WalletPage: React.FC = () => {
                                                     </IconButton>
                                                 </Box>
                                                 <Box sx={{ mb: 2 }}>
-                                                    <Typography variant="h5" sx={{ 
+                                                    <Typography variant="h5" sx={{
                                                         color: account.balance >= 0 ? 'white' : '#EF4444',
-                                                        fontWeight: 600 
+                                                        fontWeight: 600
                                                     }}>
-                                                        {balanceVisible 
+                                                        {balanceVisible
                                                             ? `${account.balance >= 0 ? '+' : ''}$${Math.abs(account.balance).toLocaleString()}`
                                                             : '****'
                                                         }

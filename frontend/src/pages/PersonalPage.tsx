@@ -18,7 +18,7 @@ export const PersonalPage: React.FC = () => {
                         Personal Information
                     </Typography>
                     <Typography variant="body1" sx={{ color: '#CBD5E1' }}>
-                        This page is coming soon. Here you'll be able to manage your personal profile, 
+                        This page is coming soon. Here you'll be able to manage your personal profile,
                         update your information, and configure your account settings.
                     </Typography>
                 </CardContent>

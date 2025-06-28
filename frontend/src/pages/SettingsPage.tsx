@@ -18,7 +18,7 @@ export const SettingsPage: React.FC = () => {
                         Application Settings
                     </Typography>
                     <Typography variant="body1" sx={{ color: '#CBD5E1' }}>
-                        This page is coming soon. Here you'll be able to configure application preferences, 
+                        This page is coming soon. Here you'll be able to configure application preferences,
                         privacy settings, notifications, and account security options.
                     </Typography>
                 </CardContent>

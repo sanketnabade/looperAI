@@ -310,10 +310,10 @@ export const AnalyticsPage: React.FC = () => {
                             <Typography variant="h6" sx={{ color: 'white', mb: 3 }}>
                                 Income vs Expenses Trend
                             </Typography>
-                            <Box sx={{ 
-                                height: 300, 
-                                display: 'flex', 
-                                alignItems: 'center', 
+                            <Box sx={{
+                                height: 300,
+                                display: 'flex',
+                                alignItems: 'center',
                                 justifyContent: 'center',
                                 backgroundColor: '#0F172A',
                                 borderRadius: 1,
@@ -334,10 +334,10 @@ export const AnalyticsPage: React.FC = () => {
                             <Typography variant="h6" sx={{ color: 'white', mb: 3 }}>
                                 Spending by Category
                             </Typography>
-                            <Box sx={{ 
-                                height: 300, 
-                                display: 'flex', 
-                                alignItems: 'center', 
+                            <Box sx={{
+                                height: 300,
+                                display: 'flex',
+                                alignItems: 'center',
                                 justifyContent: 'center',
                                 backgroundColor: '#0F172A',
                                 borderRadius: 1,
@@ -410,10 +410,10 @@ export const AnalyticsPage: React.FC = () => {
                             <Typography variant="h6" sx={{ color: 'white', mb: 3 }}>
                                 Weekly Spending Comparison
                             </Typography>
-                            <Box sx={{ 
-                                height: 300, 
-                                display: 'flex', 
-                                alignItems: 'center', 
+                            <Box sx={{
+                                height: 300,
+                                display: 'flex',
+                                alignItems: 'center',
                                 justifyContent: 'center',
                                 backgroundColor: '#0F172A',
                                 borderRadius: 1,

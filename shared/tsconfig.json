@@ -3,6 +3,9 @@
     "target": "es2020",
     "module": "commonjs",
     "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
@@ -10,10 +13,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "composite": true,
-    "declarationMap": true,
-    "sourceMap": true,
     "moduleResolution": "node"
   },
-  "include": ["src/**/*", "**/*.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

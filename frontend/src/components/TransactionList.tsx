@@ -15,7 +15,7 @@ import {
     IconButton,
 } from '@mui/material';
 import { MoreVert } from '@mui/icons-material';
-import { Transaction } from '@financial-dashboard/shared';
+import { Transaction, User } from '@financial-dashboard/shared';
 import { format } from 'date-fns';
 
 interface TransactionListProps {
@@ -85,6 +85,9 @@ export const TransactionList: React.FC<TransactionListProps> = ({
                                     Name
                                 </TableCell>
                                 <TableCell sx={{ color: '#94A3B8', border: 'none', fontSize: '0.875rem', pb: 2 }}>
+                                    From/To
+                                </TableCell>
+                                <TableCell sx={{ color: '#94A3B8', border: 'none', fontSize: '0.875rem', pb: 2 }}>
                                     Date
                                 </TableCell>
                                 <TableCell sx={{ color: '#94A3B8', border: 'none', fontSize: '0.875rem', pb: 2 }}>
@@ -99,15 +102,19 @@ export const TransactionList: React.FC<TransactionListProps> = ({
                         <TableBody>
                             {transactions.map((transaction) => {
                                 const statusStyle = getStatusColor(transaction.status);
+                                const user = (typeof transaction.user_id === 'object' && transaction.user_id !== null && 'name' in transaction.user_id) ? transaction.user_id as User : null;
+                                const userName = user?.name || `User ${transaction.user_id?.toString().slice(-4)}`;
+                                const userProfile = user?.profile || transaction.user_profile;
+
                                 return (
                                     <TableRow key={transaction.id}>
                                         <TableCell sx={{ border: 'none', py: 2 }}>
                                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                                                 <Avatar
-                                                    src={transaction.user_profile}
+                                                    src={userProfile}
                                                     sx={{ width: 40, height: 40 }}
                                                 >
-                                                    {transaction.user_id?.toString().charAt(0).toUpperCase()}
+                                                    {userName.charAt(0).toUpperCase()}
                                                 </Avatar>
                                                 <Typography
                                                     variant="body2"
@@ -117,9 +124,21 @@ export const TransactionList: React.FC<TransactionListProps> = ({
                                                         fontSize: '0.875rem',
                                                     }}
                                                 >
-                                                    User {transaction.user_id?.toString().slice(-4)}
+                                                    {userName}
                                                 </Typography>
                                             </Box>
+                                        </TableCell>
+                                        <TableCell sx={{ border: 'none', py: 2 }}>
+                                            <Typography
+                                                variant="body2"
+                                                sx={{
+                                                    color: '#CBD5E1',
+                                                    fontSize: '0.875rem',
+                                                    fontStyle: transaction.fromTo ? 'normal' : 'italic',
+                                                }}
+                                            >
+                                                {transaction.fromTo || 'Not specified'}
+                                            </Typography>
                                         </TableCell>
                                         <TableCell sx={{ border: 'none', py: 2 }}>
                                             <Typography

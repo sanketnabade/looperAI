@@ -50,6 +50,7 @@ export const getDashboardMetrics = async (req: AuthRequest, res: Response) => {
 
     // Get recent transactions
     const recentTransactions = await TransactionModel.find({ user_id: userId })
+      .populate("user_id", "name email profile")
       .sort({ date: -1 })
       .limit(5);
 

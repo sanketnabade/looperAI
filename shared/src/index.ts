@@ -6,9 +6,10 @@ export interface Transaction {
   amount: number;
   category: "Revenue" | "Expense";
   status: "Paid" | "Pending";
-  user_id: Types.ObjectId | string;
+  user_id: Types.ObjectId | string | User;
   user_profile?: string;
   categoryId?: Types.ObjectId | string;
+  fromTo?: string; // Person name - from whom (for Revenue) or to whom (for Expense)
 }
 
 export interface User {
@@ -47,6 +48,33 @@ export interface CSVExportConfig {
     status?: string;
     user_id?: string;
   };
+}
+
+export interface ExportableField {
+  key: keyof Transaction;
+  label: string;
+  description?: string;
+  defaultSelected: boolean;
+}
+
+export interface CSVExportRequest {
+  selectedFields: (keyof Transaction)[];
+  dateRange?: {
+    start: string;
+    end: string;
+  };
+  filters?: {
+    category?: "Revenue" | "Expense";
+    status?: "Paid" | "Pending";
+    search?: string;
+  };
+  filename?: string;
+}
+
+export interface CSVExportResponse {
+  success: boolean;
+  message?: string;
+  downloadUrl?: string;
 }
 
 export interface Category {

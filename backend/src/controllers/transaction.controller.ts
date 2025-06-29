@@ -30,8 +30,9 @@ export const getTransactions = async (req: AuthRequest, res: Response) => {
       };
     }
 
-    // Execute query with pagination
+    // Execute query with pagination and populate user info
     const transactions = await TransactionModel.find(filter)
+      .populate("user_id", "name email profile")
       .sort({ date: -1 })
       .skip(skip)
       .limit(limit)
@@ -64,7 +65,7 @@ export const getTransaction = async (req: AuthRequest, res: Response) => {
     const transaction = await TransactionModel.findOne({
       _id: req.params.id,
       user_id: req.user._id,
-    });
+    }).populate("user_id", "name email profile");
 
     if (!transaction) {
       return res.status(404).json({ error: "Transaction not found" });

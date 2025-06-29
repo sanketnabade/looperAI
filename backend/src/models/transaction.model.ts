@@ -52,6 +52,12 @@ const transactionSchema = new mongoose.Schema(
       ref: "Category",
       required: false,
     },
+    fromTo: {
+      type: String,
+      required: false,
+      trim: true,
+      maxlength: [100, "From/To name cannot exceed 100 characters"],
+    },
   },
   {
     timestamps: true,

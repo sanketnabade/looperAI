@@ -22,7 +22,7 @@ export const getProfile = async (req: AuthRequest, res: Response) => {
 // Update user profile
 export const updateProfile = async (req: AuthRequest, res: Response) => {
   try {
-    const { name, email, currentPassword, newPassword } = req.body;
+    const { name, email, profile, currentPassword, newPassword } = req.body;
     const user = await UserModel.findById(req.user._id);
 
     if (!user) {
@@ -43,6 +43,11 @@ export const updateProfile = async (req: AuthRequest, res: Response) => {
       user.name = name;
     }
 
+    // Update profile picture if provided
+    if (profile !== undefined) {
+      user.profile = profile;
+    }
+
     // Update password if provided
     if (currentPassword && newPassword) {
       const isMatch = await user.comparePassword(currentPassword);
@@ -55,7 +60,10 @@ export const updateProfile = async (req: AuthRequest, res: Response) => {
 
     await user.save();
     const updatedUser = await UserModel.findById(user._id).select("-password");
-    res.json(updatedUser);
+    res.json({
+      user: updatedUser,
+      message: "Profile updated successfully",
+    });
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
@@ -78,6 +86,31 @@ export const deleteAccount = async (req: AuthRequest, res: Response) => {
 
     await UserModel.findByIdAndDelete(req.user._id);
     res.json({ message: "Account deleted successfully" });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// Upload avatar (simplified - in production, use cloud storage)
+export const uploadAvatar = async (req: AuthRequest, res: Response) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: "No file uploaded" });
+    }
+
+    // In a real app, you'd upload to cloud storage (AWS S3, Cloudinary, etc.)
+    // For now, we'll just return a placeholder URL
+    const avatarUrl = `/uploads/avatars/${
+      req.user._id
+    }_${Date.now()}.${req.file.originalname.split(".").pop()}`;
+
+    // You could also save the file locally here if needed
+    // For this demo, we'll just return a mock URL
+    res.json({
+      url: `https://ui-avatars.com/api/?name=${encodeURIComponent(
+        req.user.name || "User"
+      )}&size=200&background=00D4FF&color=fff`,
+    });
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }

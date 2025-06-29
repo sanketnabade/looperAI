@@ -44,6 +44,7 @@ const TransactionModal: React.FC<TransactionModalProps> = ({
         date: string;
         user_profile: string;
         user_id: string;
+        fromTo: string;
     }>({
         amount: '',
         category: 'Expense',
@@ -51,6 +52,7 @@ const TransactionModal: React.FC<TransactionModalProps> = ({
         date: new Date().toISOString().split('T')[0],
         user_profile: '', // This will be set from the current user
         user_id: '', // This will be set from the current user
+        fromTo: '',
     });
 
     React.useEffect(() => {
@@ -62,6 +64,7 @@ const TransactionModal: React.FC<TransactionModalProps> = ({
                 date: new Date(transaction.date).toISOString().split('T')[0],
                 user_profile: transaction.user_profile ?? '',
                 user_id: transaction.user_id.toString(),
+                fromTo: transaction.fromTo ?? '',
             });
         }
     }, [transaction]);
@@ -84,6 +87,7 @@ const TransactionModal: React.FC<TransactionModalProps> = ({
                 date: new Date(formData.date),
                 user_profile: formData.user_profile || 'default-avatar.png',
                 user_id: formData.user_id || 'current-user-id',
+                fromTo: formData.fromTo.trim() || undefined,
             };
 
             if (transaction?.id) {
@@ -294,6 +298,38 @@ const TransactionModal: React.FC<TransactionModalProps> = ({
                                         },
                                         '&.Mui-focused fieldset': {
                                             borderColor: '#00D4FF',
+                                        },
+                                    },
+                                    '& .MuiInputBase-input': {
+                                        color: 'white',
+                                    },
+                                }}
+                            />
+
+                            <TextField
+                                label={formData.category === 'Revenue' ? 'From (who paid)' : 'To (whom paid)'}
+                                name="fromTo"
+                                value={formData.fromTo}
+                                onChange={handleChange}
+                                fullWidth
+                                placeholder={formData.category === 'Revenue' ? 'e.g., John Doe, ABC Company' : 'e.g., Jane Smith, XYZ Store'}
+                                sx={{
+                                    '& .MuiOutlinedInput-root': {
+                                        backgroundColor: '#0F172A',
+                                        '& fieldset': {
+                                            borderColor: '#334155',
+                                        },
+                                        '&:hover fieldset': {
+                                            borderColor: '#475569',
+                                        },
+                                        '&.Mui-focused fieldset': {
+                                            borderColor: '#00D4FF',
+                                        },
+                                    },
+                                    '& .MuiInputLabel-root': {
+                                        color: '#94A3B8',
+                                        '&.Mui-focused': {
+                                            color: '#00D4FF',
                                         },
                                     },
                                     '& .MuiInputBase-input': {

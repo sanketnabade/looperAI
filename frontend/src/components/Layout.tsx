@@ -79,24 +79,14 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     const drawer = (
         <Box sx={{ height: '100%', backgroundColor: '#1E293B' }}>
             <Box sx={{ p: 3, display: 'flex', alignItems: 'center', gap: 2 }}>
-                <Box
-                    sx={{
-                        width: 32,
-                        height: 32,
-                        borderRadius: 1,
-                        background: 'linear-gradient(135deg, #00D4FF 0%, #22C55E 100%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'white',
-                        fontWeight: 'bold',
+                <img
+                    src="/Logo.svg"
+                    alt="Penta Logo"
+                    style={{
+                        width: 96,
+                        height: 96,
                     }}
-                >
-                    P
-                </Box>
-                <Typography variant="h6" sx={{ color: 'white', fontWeight: 600 }}>
-                    Penta
-                </Typography>
+                />
             </Box>
 
             <List sx={{ px: 2 }}>

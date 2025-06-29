@@ -54,25 +54,14 @@ export const LoginPage: React.FC = () => {
                 <Stack spacing={4} alignItems="center">
                     {/* Logo */}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-                        <Box
-                            sx={{
-                                width: 40,
-                                height: 40,
-                                borderRadius: 1,
-                                background: 'linear-gradient(135deg, #00D4FF 0%, #22C55E 100%)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                color: 'white',
-                                fontWeight: 'bold',
-                                fontSize: '1.5rem',
+                        <img
+                            src="/Logo.svg"
+                            alt="Penta Logo"
+                            style={{
+                                width: 96,
+                                height: 96,
                             }}
-                        >
-                            P
-                        </Box>
-                        <Typography variant="h4" sx={{ color: 'white', fontWeight: 600 }}>
-                            Penta
-                        </Typography>
+                        />
                     </Box>
 
                     <Stack spacing={2} sx={{ textAlign: 'center' }}>

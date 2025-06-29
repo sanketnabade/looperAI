@@ -18,7 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@financial-dashboard/shared": ["../shared"]
+      "@financial-dashboard/shared": ["../shared/dist"]
     }
   },
   "include": ["src", "environment.d.ts"],

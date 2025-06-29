@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { Transaction } from "../../../shared/src/index.ts";
+import { Transaction } from "@financial-dashboard/shared";
 
 interface ITransaction extends Omit<Transaction, "id">, mongoose.Document {
   createdAt: Date;

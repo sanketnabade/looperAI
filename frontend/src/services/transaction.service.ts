@@ -1,4 +1,4 @@
-import { Transaction } from "../../../shared/src/index.ts";
+import { Transaction } from "@financial-dashboard/shared";
 import api from "./api";
 
 interface TransactionFilters {

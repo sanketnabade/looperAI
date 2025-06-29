@@ -15,7 +15,7 @@ import {
     IconButton,
 } from '@mui/material';
 import { MoreVert } from '@mui/icons-material';
-import { Transaction } from '../../../shared/src/index.ts';
+import { Transaction } from '@financial-dashboard/shared';
 import { format } from 'date-fns';
 
 interface TransactionListProps {

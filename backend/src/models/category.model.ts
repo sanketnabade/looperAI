@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { Category } from "../../../shared/src/index.ts";
+import { Category } from "@financial-dashboard/shared";
 
 interface ICategory extends Omit<Category, "id">, mongoose.Document {
   createdAt: Date;

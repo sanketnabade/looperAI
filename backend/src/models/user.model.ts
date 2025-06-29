@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
-import { User } from "../../../shared/src/index.ts";
+import { User } from "@financial-dashboard/shared";
 
 interface IUserDocument extends Omit<User, "id">, mongoose.Document {
   password: string;

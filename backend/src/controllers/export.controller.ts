@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Parser } from "json2csv";
 import { TransactionModel } from "../models/transaction.model";
-import { CSVExportConfig } from "../../../shared/src/index.ts";
+import { CSVExportConfig } from "@financial-dashboard/shared";
 
 interface AuthRequest extends Request {
   user?: any;

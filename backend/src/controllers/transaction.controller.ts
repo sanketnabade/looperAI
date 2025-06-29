@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { TransactionModel } from "../models/transaction.model";
-import { Transaction } from "@financial-dashboard/shared";
+import { Transaction } from "../../../shared/src/index.ts";
 import { AppError } from "../middleware/error.middleware";
 import mongoose from "mongoose";
 

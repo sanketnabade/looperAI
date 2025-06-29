@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import { UserModel } from "../models/user.model";
-import { User } from "@financial-dashboard/shared";
+import { User } from "../../../shared/src/index.ts";
 
 export interface AuthRequest extends Request {
   user?: User & { _id: string; profile?: string };

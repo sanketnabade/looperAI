@@ -16,7 +16,7 @@ import {
     Snackbar,
 } from '@mui/material';
 import { Close } from '@mui/icons-material';
-import { Transaction } from '@financial-dashboard/shared';
+import { Transaction } from '../../../shared/src/index.ts';
 import { transactionService } from '../services/transaction.service';
 import { useQueryClient } from '@tanstack/react-query';
 

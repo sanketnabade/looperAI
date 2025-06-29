@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { TransactionModel } from "../models/transaction.model";
-import { DashboardMetrics } from "@financial-dashboard/shared";
+import { DashboardMetrics } from "../../../shared/src/index.ts";
 
 interface AuthRequest extends Request {
   user?: any;

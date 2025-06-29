@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { UserModel } from "../models/user.model";
-import { LoginRequest } from "@financial-dashboard/shared";
+import { LoginRequest } from "../../../shared/src/index.ts";
 
 const generateToken = (id: string): string => {
   return jwt.sign({ id }, process.env.JWT_SECRET as string, {

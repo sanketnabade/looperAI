@@ -1,4 +1,4 @@
-import { DashboardMetrics } from "@financial-dashboard/shared";
+import { DashboardMetrics } from "../../../shared/src/index.ts";
 import api from "./api";
 
 export const dashboardService = {

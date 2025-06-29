@@ -8,7 +8,7 @@ import {
   CardContent,
 } from '@mui/material';
 import { Add } from '@mui/icons-material';
-import { Transaction } from '@financial-dashboard/shared';
+import { Transaction } from '../../../shared/src/index.ts';
 import { transactionService } from '../services/transaction.service';
 import { useQuery } from '@tanstack/react-query';
 import TransactionModal from '../components/TransactionModal';

@@ -1,4 +1,4 @@
-import { LoginRequest, LoginResponse } from "@financial-dashboard/shared";
+import { LoginRequest, LoginResponse } from "../../../shared/src/index.ts";
 import api from "./api";
 
 export const authService = {

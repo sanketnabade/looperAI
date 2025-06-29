@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { User } from "@financial-dashboard/shared";
+import { User } from "../../../shared/src/index.ts";
 import { authService } from "../services/auth.service";
 
 interface AuthState {

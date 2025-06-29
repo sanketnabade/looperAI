@@ -22,5 +22,5 @@
     }
   },
   "include": ["src", "environment.d.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "../shared" }, { "path": "./tsconfig.node.json" }]
 }

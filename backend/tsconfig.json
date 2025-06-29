@@ -13,7 +13,7 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "paths": {
-      "@financial-dashboard/shared": ["../shared/dist"]
+      "@financial-dashboard/shared": ["../shared/src"]
     }
   },
   "include": ["src/**/*"],
